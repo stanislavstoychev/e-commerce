@@ -5,11 +5,11 @@ export const create = async (req, res) => {
     try {
         //1.check name is not empty
         const { name } = req.body;
-        if(!name.trim()) { return res.json({"error": "Name is required"})}
+        if(!name.trim()) { return res.json({error: "Name is required"})}
         //2.name is unique
         const existingCategory = await Category.findOne({ name });
         if (existingCategory) {
-            return res.json({ err: "Already exists" });
+            return res.json({ error: "Already exists" });
         }
         //3.create a slug
         const slug = slugify(req.body.name, '-');

@@ -5,7 +5,7 @@ import {create, update, remove, list, read} from '../controllers/category.js';
 
 const router = express.Router();
 
-router.get('/category', list);
+router.get('/categories', list);
 router.get('/category/:slug',  read);
 router.post('/category', requireSignin, isAdmin, create);
 //update 

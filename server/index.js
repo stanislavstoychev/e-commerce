@@ -44,7 +44,7 @@ app.use("/api", productRoutes);
 
 
 
-const port = process.env.PORT;
+const port = process.env.PORT_SERVER;
 app.listen(port,  () => {
   console.log("Console log PORT", port);
 });
